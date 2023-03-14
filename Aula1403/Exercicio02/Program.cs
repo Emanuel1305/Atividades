@@ -35,6 +35,7 @@ namespace Exercicio02
             {
                 Console.WriteLine("\nOs números são iguais");
             }
+
             Console.ReadKey();
         }
     }

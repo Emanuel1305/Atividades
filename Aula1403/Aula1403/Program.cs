@@ -11,6 +11,7 @@ namespace Aula1403
         static void Main(string[] args)
         {
             Console.WriteLine("\t\t---Verifica se o número é par ou impar---\n");
+
             Console.Write("Informe o numero: ");
             int num = int.Parse(Console.ReadLine());
 
@@ -22,6 +23,7 @@ namespace Aula1403
             {
                 Console.WriteLine("\nEste número é impar!");
             }
+
             Console.ReadKey();
         }
     }

@@ -10,10 +10,11 @@ namespace Exercicio03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\t\t---Iforma se um aluno foi aprovado---\n");
+            Console.WriteLine("\t\t---Informa se um aluno foi aprovado---\n");
+
             Console.Write("Informe o nome do aluno: ");
             string nome = Console.ReadLine();
-            Console.Write("Informe a primeira nota: ");
+            Console.Write("\nInforme a primeira nota: ");
             double n1 = double.Parse(Console.ReadLine());
             Console.Write("Informe a segunda nota: ");
             double n2 = double.Parse(Console.ReadLine());
@@ -33,7 +34,12 @@ namespace Exercicio03
             {
                 ap += "Reprovado";
             }
-            Console.Write("");
+
+            Console.Clear();
+            Console.WriteLine("\t\t---Informa se um aluno foi aprovado---\n");
+            Console.Write($"Aluno:\t{nome}\nMédia:\t{media}\nO aluno foi {ap.ToUpper()}!");
+
+            Console.ReadKey();
         }
     }
 }
