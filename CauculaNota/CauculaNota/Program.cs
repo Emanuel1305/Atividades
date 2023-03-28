@@ -58,6 +58,7 @@ namespace CauculaNota
                     Console.WriteLine("\t\t----Calcula nota do aluno----\n");
                     Console.WriteLine("\nNome\t\tConceito\tSituação\n" +
                         $"{nome}\t\t{conceito}\t\tAprovado");
+
                     break;
                 case 'C':
                     Console.Clear();
