@@ -22,16 +22,18 @@ namespace CauculaNota
             Console.Write("Nota do 4° Bimestre: ");
             double n4 = double.Parse(Console.ReadLine());
 
-            double media = (n1 + n2 + n3 + n4)/4;
+            double media = (n1 + n2 + n3 + n4) / 4;
             char conceito = ' ';
 
             if (media >= 90)
             {
                 conceito = 'A';
-            } else if (media >= 80)
+            }
+            else if (media >= 80)
             {
                 conceito = 'B';
-            } else if (media >= 60)
+            }
+            else if (media >= 60)
             {
                 conceito = 'C';
             }
@@ -51,31 +53,31 @@ namespace CauculaNota
             switch (conceito)
             {
                 case 'A':
-                    Console.WriteLine($"\nNome:\t\t{nome}\n" +
-                        $"Conceito:\t{conceito}\n" +
-                        $"Situação:\tAprovado");
-                    break;
                 case 'B':
-                    Console.WriteLine($"\nNome:\t\t{nome}\n" +
-                        $"Conceito:\t{conceito}\n" +
-                        $"Situação:\tAprovado");
+                    Console.Clear();
+                    Console.WriteLine("\t\t----Calcula nota do aluno----\n");
+                    Console.WriteLine("\nNome\t\tConceito\tSituação\n" +
+                        $"{nome}\t\t{conceito}\t\tAprovado");
                     break;
                 case 'C':
-                    Console.WriteLine($"\nNome:\t\t{nome}\n" +
-                        $"Conceito:\t{conceito}\n" +
-                        $"Situação:\tAprovado");
+                    Console.Clear();
+                    Console.WriteLine("\t\t----Calcula nota do aluno----\n");
+                    Console.WriteLine("\nNome\t\tConceito\tSituação\n" +
+                        $"{nome}\t\t{conceito}\t\tAprovado");
                     break;
                 case 'D':
-                    Console.WriteLine($"\nNome:\t\t{nome}\n" +
-                        $"Conceito:\t{conceito}\n" +
-                        $"Situação:\tRecuperação");
+                    Console.Clear();
+                    Console.WriteLine("\t\t----Calcula nota do aluno----\n");
+                    Console.WriteLine("\nNome\t\tConceito\tSituação\n" +
+                        $"{nome}\t\t{conceito}\t\tRecuperação");
                     break;
                 case 'E':
-                    Console.WriteLine($"\nNome:\t\t{nome}\n" +
-                        $"Conceito:\t{conceito}\n" +
-                        $"Situação:\tExame");
+                    Console.Clear();
+                    Console.WriteLine("\t\t----Calcula nota do aluno----\n");
+                    Console.WriteLine("\nNome\t\tConceito\tSituação\n" +
+                        $"{nome}\t\t{conceito}\t\tExame");
                     break;
-                
+
             }
             Console.ReadKey();
         }
