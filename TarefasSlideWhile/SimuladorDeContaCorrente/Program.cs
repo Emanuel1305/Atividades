@@ -12,6 +12,12 @@ namespace SimuladorDeContaCorrente
         {
             double saldo = 0;
             int opc = 0;
+            Console.WriteLine("\t\t---Simulador de conta corrente---\n");
+            Console.WriteLine("O que você quer fazer?" +
+                "\n1. Depositar" +
+                "\n2. Sacar" +
+                "\n3. Exibir Saldo" +
+                "\n4. Sair");
             while (opc != 4)
             {
                 opc = int.Parse(Console.ReadLine());
@@ -40,6 +46,12 @@ namespace SimuladorDeContaCorrente
                 }
                 opc = 0;
                 Console.Clear();
+                Console.WriteLine("\t\t---Simulador de conta corrente---\n");
+                Console.WriteLine("O que você quer fazer?" +
+                    "\n1. Depositar" +
+                    "\n2. Sacar" +
+                    "\n3. Exibir Saldo" +
+                    "\n4. Sair");
             }
             
             Console.ReadLine();
