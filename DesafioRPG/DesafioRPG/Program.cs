@@ -6,46 +6,61 @@ using System.Threading.Tasks;
 
 namespace DesafioRPG
 {
+    class Game
+    {
+        private int vidaHeroi = 10;
+        private int vidaMonstro = 10;
+        private Random random = new Random();
+
+        public void IniciarJogo()
+        {
+            Console.WriteLine("\t\t*** O jogo começou!! ***\n\n" +
+                "======================================================================================================");
+
+            while (vidaHeroi > 0 && vidaMonstro > 0)
+            {
+                AtaqueHeroi();
+                if (vidaMonstro <= 0) break;
+                AtaqueMonstro();
+            }
+
+            if (vidaHeroi > 0)
+            {
+                Console.WriteLine("======================================================================================================");
+                Console.WriteLine("\n\t\t*** O herói venceu! ***");
+            }
+            else
+            {
+                Console.WriteLine("======================================================================================================");
+                Console.WriteLine("\n\t\t*** O monstro venceu! ***");
+            }
+
+            Console.WriteLine("\t\t--- O jogo acabou! ---");
+        }
+
+        private void AtaqueHeroi()
+        {
+            int attackValue = random.Next(1, 11);
+            vidaMonstro -= attackValue;
+            Console.WriteLine("\tO monstro foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", attackValue, vidaMonstro);
+        }
+
+        private void AtaqueMonstro()
+        {
+            int attackValue = random.Next(1, 11);
+            vidaHeroi -= attackValue;
+            Console.WriteLine("\tO herói foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", attackValue, vidaHeroi);
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Inicializando a integridade do herói e do monstro
-            int heroIntegrity = 10;
-            int monsterIntegrity = 10;
+            Console.WriteLine("\t\t---Simulador de RPG---\n");
+            Game game = new Game();
+            game.IniciarJogo();
+            Console.ReadLine();
 
-            // Loop principal do jogo
-            while (heroIntegrity > 0 && monsterIntegrity > 0)
-            {
-                // Ataque do herói
-                Console.WriteLine("\nHerói Ataca!");
-                int heroAttack = new Random().Next(1, 11); // Gera um valor aleatório entre 1 e 10
-                monsterIntegrity -= heroAttack;
-                Console.WriteLine($"O monstro foi danificado e perdeu {heroAttack} saúde e agora tem {monsterIntegrity} saúde.");
-
-                // Verifica se o monstro ainda está vivo antes de atacar
-                if (monsterIntegrity > 0)
-                {
-                    // Ataque do monstro
-                    Console.WriteLine("\nMontro Ataca!");
-                    int monsterAttack = new Random().Next(1, 11); // Gera um valor aleatório entre 1 e 10
-                    heroIntegrity -= monsterAttack;
-                    Console.WriteLine($"O herói foi danificado e perdeu {monsterAttack} saúde e agora tem {heroIntegrity} saúde.");
-                }
-            }
-
-            // Verifica quem venceu o jogo
-            if (heroIntegrity <= 0)
-            {
-                Console.WriteLine("\nO monstro venceu!");
-            }
-            else
-            {
-                Console.WriteLine("\nO herói venceu!");
-            }
-
-            // Aguarda o usuário pressionar alguma tecla antes de fechar a aplicação
-            Console.ReadKey();
         }
     }
 }
