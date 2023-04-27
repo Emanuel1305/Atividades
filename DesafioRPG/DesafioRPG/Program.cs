@@ -10,10 +10,21 @@ namespace DesafioRPG
     {
         private int vidaHeroi = 10;
         private int vidaMonstro = 10;
+        public string nomeHeroi = "";
         private Random random = new Random();
 
         public void IniciarJogo()
         {
+            Console.WriteLine("\t\t---DESAFIO RPG---\n\t\t---Tela Iicial ---\n");
+            Console.WriteLine("Para embarcar nessa incrivel jorada, Informe o nome que seu valoroso herói carregará!\n");
+            Console.Write("Nome: ");
+            nomeHeroi = Console.ReadLine();
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("\t\t---DESAFIO RPG---\n\t\t---Tela Iicial ---\n");
+            Console.WriteLine($"O nome do seu Herói foi definido!\nDesejamos boa sorte á {nomeHeroi}!\nQue o jogo Comece!!");
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("\t\t*** O jogo começou!! ***\n\n" +
                 "======================================================================================================");
 
@@ -40,23 +51,23 @@ namespace DesafioRPG
 
         private void AtaqueHeroi()
         {
-            int attackValue = random.Next(1, 11);
-            vidaMonstro -= attackValue;
-            Console.WriteLine("\tO monstro foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", attackValue, vidaMonstro);
+            int ataque = random.Next(1, 11);
+            vidaMonstro -= ataque;
+            Console.WriteLine("\tO monstro foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", ataque, vidaMonstro);
         }
 
         private void AtaqueMonstro()
         {
-            int attackValue = random.Next(1, 11);
-            vidaHeroi -= attackValue;
-            Console.WriteLine("\tO herói foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", attackValue, vidaHeroi);
+            int ataque = random.Next(1, 11);
+            vidaHeroi -= ataque;
+            Console.WriteLine("\tO herói foi danificado e perdeu {0} pontos de saúde e agora tem {1} pontos de saúde.", ataque, vidaHeroi);
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\t\t---Simulador de RPG---\n");
+            
             Game game = new Game();
             game.IniciarJogo();
             Console.ReadLine();
