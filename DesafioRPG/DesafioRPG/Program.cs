@@ -40,7 +40,7 @@ namespace DesafioRPG
             if (vidaHeroi > 0)
             {
                 Console.WriteLine("====================================================================================================");
-                Console.WriteLine("\n\t\t*** O {0} venceu! ***", nomeHeroi);
+                Console.WriteLine("\n\t\t*** {0} venceu! ***", nomeHeroi);
             }
             else
             {
