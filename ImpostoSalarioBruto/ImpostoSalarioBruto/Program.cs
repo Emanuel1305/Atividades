@@ -13,8 +13,8 @@ namespace ImpostoSalarioBruto
             Console.WriteLine("\t\t---Calcula o valor de imposto de renda---\n" +
                 "===========================================================");
 
-            const double taxa1 = 0.075;
-            const double taxa2 = 0.15;
+            double taxa1 = 0.075;
+            double taxa2 = 0.15;
 
             string msg = "";
             string nome;
