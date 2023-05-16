@@ -12,6 +12,7 @@ namespace AtividadeData
         {
             DateTime data = DateTime.Now;
             Console.WriteLine(data);
+
             Console.ReadKey();
         }
     }

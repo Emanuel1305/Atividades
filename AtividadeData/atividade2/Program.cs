@@ -10,17 +10,37 @@ namespace atividade2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Informe data do seu nascimento: ");
-            Console.Write("Dia: ");
-            int dia = int.Parse(Console.ReadLine());
-            Console.Write("Mês: ");
-            int mes = int.Parse(Console.ReadLine());
-            Console.Write("Ano: ");
-            int ano = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite a data de nascimento (DD/MM/AAAA): ");
+            string dataNascimentoStr = Console.ReadLine();
 
-            DateTime dateTime = new DateTime(dia, mes, ano);
-            Console.WriteLine(dateTime);
-            Console.ReadKey();
+            // Converter a string para um objeto DateTime
+            DateTime dataNascimento;
+            if (DateTime.TryParseExact(dataNascimentoStr, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dataNascimento))
+            {
+                // Calcular a idade
+                int idade = CalcularIdade(dataNascimento);
+
+                // Exibir a idade
+                Console.WriteLine("A idade é: " + idade);
+            }
+            else
+            {
+                Console.WriteLine("Data de nascimento inválida.");
+            }
+        }
+
+        static int CalcularIdade(DateTime dataNascimento)
+        {
+            DateTime dataAtual = DateTime.Today;
+            int idade = dataAtual.Year - dataNascimento.Year;
+
+            // Verificar se ainda não fez aniversário neste ano
+            if (dataAtual < dataNascimento.AddYears(idade))
+            {
+                idade--;
+            }
+
+            return idade;
         }
     }
 }
